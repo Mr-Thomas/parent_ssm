@@ -26,12 +26,17 @@ public class AccountController {
      */
     @RequestMapping("/transfer")
     public String transfer(Integer old_id, Integer new_id, Double money, Model model){
+        //转账
         accountService.transfer(old_id,new_id,money);
+        //查询转出用户
         Account old_Account = accountService.findOne(old_id);
+        //加入session域
         model.addAttribute("old_Account",old_Account);
+        //查询转入用户
         Account new_Account = accountService.findOne(new_id);
         model.addAttribute("new_Account",new_Account);
         model.addAttribute("money",money);
+
         return "success";
     }
 }
