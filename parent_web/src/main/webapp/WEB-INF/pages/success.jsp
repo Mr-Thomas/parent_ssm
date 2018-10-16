@@ -11,6 +11,11 @@
     <title>Title</title>
 </head>
 <body>
-<h3>修改成功</h3>
+
+<h3>保存成功</h3>
+
+
+${old_Account.name}向${new_Account.name}转账${money}元
+
 </body>
 </html>
